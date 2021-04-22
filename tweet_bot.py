@@ -58,3 +58,4 @@ def timed_job2():
     image = random.choice(images)
     post_image(image.link, twitter_consumer_key, twitter_consumer_secret, twitter_access_token_key, twitter_access_token_secret)    
     
+sched.start()
