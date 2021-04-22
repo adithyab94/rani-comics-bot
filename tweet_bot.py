@@ -23,7 +23,7 @@ def get_images(album_id, client_id, client_secret):
 
 album_id = ['HACfOjF','MrTt2Lv','1MAbcit']
 
-imgur_client_id = environ['CLIENT_ID]
+imgur_client_id = environ['CLIENT_ID']
 imgur_client_secret = environ['CLIENT_SECRET']
 
 twitter_consumer_key = environ['CONSUMER_KEY']
