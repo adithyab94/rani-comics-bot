@@ -33,12 +33,6 @@ twitter_access_token_secret = environ['ACCESS_SECRET']
 
 
 sched = BlockingScheduler()
-
-@sched.scheduled_job('interval', hours=0.2)
-def timed_job():
-    images = get_images(album_id[0], imgur_client_id, imgur_client_secret)
-    image = random.choice(images)
-    post_image(image.link, twitter_consumer_key, twitter_consumer_secret, twitter_access_token_key, twitter_access_token_secret)
     
 @sched.scheduled_job('interval', hours=6)
 def timed_job():
