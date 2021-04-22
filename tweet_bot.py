@@ -21,7 +21,7 @@ def get_images(album_id, client_id, client_secret):
     client = ImgurClient(client_id, client_secret)
     return client.get_album_images(album_id)
 
-album_id = ['HACfOjF','MrTt2Lv','1MAbcit']
+album_id = ['sbgCnpx','HACfOjF','1MAbcit']
 
 imgur_client_id = environ['CLIENT_ID']
 imgur_client_secret = environ['CLIENT_SECRET']
@@ -34,7 +34,7 @@ twitter_access_token_secret = environ['ACCESS_SECRET']
 
 sched = BlockingScheduler()
 
-@sched.scheduled_job('interval', hours=8)
+@sched.scheduled_job('interval', hours=6)
 def timed_job():
     images = get_images(album_id[0], imgur_client_id, imgur_client_secret)
     image = random.choice(images)
